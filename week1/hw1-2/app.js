@@ -8,12 +8,13 @@ MongoClient.connect('mongodb://localhost:27017/m101', function(err, db) {
     var algorithm = 'aes256';
     var encrypted_message = '7013254dca77e2c913d18cf5b70e7bba';
 
-    // Prueba para saber como se guarda en base de datos con crypto
-    var cipher = crypto.createCipher(algorithm, encrypted_message);
+    // Prueba para saber como se encripto el mensaje
+    // El id que obtenemos de base de datos funciona como contraseña
+    var cipher = crypto.createCipher(algorithm, 'uAM3HHE7lgQOyGMICDxW');
     var encrypted = cipher.update('I like kittens', 'utf8', 'hex');
     encrypted = cipher.final('hex');
-    console.log("encrypted: " + encrypted);
-    //------------- NO FUNCIONA
+    console.log(`encrypted: ${encrypted}`);
+    //-------------
 
     db.collection('hw1_2').find({}).toArray(function(err, docs) {
         if(err) throw err;
@@ -25,7 +26,6 @@ MongoClient.connect('mongodb://localhost:27017/m101', function(err, db) {
         
 	var doc = docs[0];
         var decipher = crypto.createDecipher(algorithm, doc['_id']);
-        console.log("decipher: " + JSON.stringify(decipher));
         var decrypted = decipher.update(encrypted_message, 'hex', 'utf8') + decipher.final('utf8');
         console.log("Answer: " + decrypted);
         return db.close();
