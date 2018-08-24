@@ -1,3 +1,7 @@
+## Question
+
+If you have the mongodb driver installed correctly, this will print out the message 'Answer: ' followed by some additional text. Enter that additional text in the box below.
+
 ## Answer
 
 - mongorestore dump

@@ -1,3 +1,7 @@
+## Question
+
+If you have all the dependencies installed correctly, this will print the message 'Express server listening on port 3000'. Navigate to 'localhost:3000' in a browser and enter the text that is displayed on that page in the text box below.
+
 ## Answer
 
 - mongorestore dump
