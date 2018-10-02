@@ -1,0 +1,1 @@
+[Accumulator](https://docs.mongodb.com/manual/meta/aggregation-quick-reference/#accumulators-group)

@@ -1,0 +1,1 @@
+[group](https://docs.mongodb.com/manual/reference/operator/aggregation/group/#pipe._S_group)
